@@ -1,0 +1,104 @@
+:: StoryTitle
+All Eyes On Us
+
+:: StoryData 
+{
+    "ifid": "4D8F5047-56A4-4047-9FDD-06B13FB1346E",
+	"format": "SugarCube",
+	"format-version": "2.31.1",
+	"start": "Prologue",
+	"zoom": 1
+}
+
+
+:: Prologue 
+Over the past few years, digital surveillance and the fight for privacy have become a fixture in the news.
+
+The problem is far worse, and way closer to home, than the news lets on. 
+
+The stories presented here will help you understand [[what's at risk.|scene-1-scenario]]
+
+:: scene-1-scenario
+Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony's death by posting photos of him online with the tag #E4A ("Everything for Anthony").
+
+In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
+
+[[Yes|scene-1-choices]]
+
+[[No|scene-1-scenario]]
+
+:: scene-1-choices
+The closest thing to grieving you can do is join in the discussion online. 
+
+You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c]]
+
+:: scene-1-short-a
+Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
+
+It also gets the attention of the police, who are monitoring the #E4A hastag as it trends online. [[They're following your social media activities now.|scene-1-long-a]]
+
+:: scene-1-long-a
+Because you had a picture of Anthony attached to your post, the police have flagged you as a likely conspirator of his. You are entered into the NYPD Gang Database as a precaution.
+
+This means that if you get involved with the NYPD again, you will receive added charges in court because you are in the database. 
+
+[[continue|scene-2-scenario]]
+
+
+:: scene-1-short-b
+Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
+
+A few months later, it catches the attention of the police. [[They're following your social media activities now.|scene-1-long-b]]
+
+:: scene-1-long-b
+The NYPD has flagged you as at-risk of being involved gang affiliated. They're watching all of your social media activites closely now.
+
+[[continue|scene-2-scenario]]
+
+
+:: scene-1-short-c
+You decide not to post your thoughts online. What happened to Anthony still hurts, but you try to compartmentalize it.
+
+[[continue|scene-2-scenario]]
+
+:: scene-2-scenario
+You are in school and hear there will be a fight on campus after school.
+
+After your last class, you head outside and see a group of people gathering.
+
+You're early enough to get an unobstructed view of the fight. [[Now what?|scene-2-choices]]
+
+:: scene-2-choices
+The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. "A video of [[this would get tons of attention online.|scene-2-short-a]]" you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can't find them. "[[I'll just catch a video for my friends|scene-2-short-b]]; they'd love to have this view." On second thought, you consider backing out of the crowd and finding your friends instead. Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c]]
+
+:: scene-2-short-a
+Your video blows up! You aren't sure if you caught the best angle of the action or if you were just lucky enough to be the first post people found online, but your video have thousands of views by dinner.
+
+Some of those views came from your school administrators, who are now convinced that [[you were involved in the fight breaking out.|scene-2-long-a]]
+:: scene-2-long-a 
+You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
+
+:: scene-2-short-b
+You manage to catch a good angle of the action for your friends. They're all hyped to see what went down. 
+
+After going your separate ways that evening, you start getting requests to see the video from other kids at school. Word of your fight footage travels all the way to the school's administrators in no time. 
+
+You get called in and your [[phone gets confiscated.|scene-2-long-b]] They're looking for the video you recorded, but who knows what else they'll find?
+
+:: scene-2-long-b
+You get suspended from school for recording the fight. If things escalate any further between you and the school's dean, law enforcement will become involved. 
+
+:: scene-2-short-c
+The fight happens, and multiple people record it. Several people in your grade face severe consequences from school administration for being in the fight. You get off easy with detention though - your face was identified in one of the videos.
+
+:: scene-3-scenario
+
+:: scene-3-choices
+
+:: scene-3-short-a 
+
+:: scene-3-long-a
+
+:: scene-3-short-b 
+
+:: scene-3-short-c

@@ -1,0 +1,36 @@
+:: StoryTitle
+example
+
+
+:: StoryData
+{
+	"ifid": "9A627793-24C0-4FD5-90CC-C3F53E66DF64",
+	"format": "SugarCube",
+	"format-version": "2.31.1",
+	"start": "body1",
+	"zoom": 1
+}
+
+
+:: body1 {"position":"400,200","size":"100,100"}
+This is the first body passage of the example story I've made. 
+
+I have included some notes in this [[dead-end passage.|deadend]]
+
+To advance, let's go to the [[next passage|body2]]
+
+
+:: deadend {"position":"300,350","size":"100,100"}
+You can use dead-end passages like this to give context to the body passages. They're kinda like tooltips in that sense. 
+
+We can return to the first body passage through [[this link.|body1]]
+
+
+:: body2 {"position":"500,350","size":"100,100"}
+Clicking through to the next body passage should prevent our player from returning to the previous passage. 
+
+Unfortunately for us, the SugarCube story format includes this sidebar which lets the player revisit the previous passage :( 
+
+The good news is, we can disable that feature from a text editor.
+
+
