@@ -6,76 +6,40 @@ All Eyes On Us
     "ifid": "4D8F5047-56A4-4047-9FDD-06B13FB1346E",
 	"format": "SugarCube",
 	"format-version": "2.31.1",
-	"start": "Prologue",
+	"start": "Intro",
 	"zoom": 1
 }
 
 
-:: Prologue 
-Over the past few years, digital surveillance and the fight for privacy have become a fixture in the news.
-
-The problem is far worse, and way closer to home, than the news lets on. 
-
-The stories presented here will help you understand what's at risk.
-
-To continue [[Draw an Identity Card.|Identity-Card]]
+:: Intro 
+<<include Prologue>>
 
 :: Identity-Card
-Your Identity Card is your character for the game, and gives you four pieces of key demographic information. 
-
-Together, these four components determine the number of points that you start with. 
-
-[[Read over the instructions|Instructions]] or [[Begin scenario 1.|scene-1-scenario]]
+<<include IdentityCard>>
 
 ::Instructions
-Each scenario presents a situation, commonly faced by youth, that involves social media, surveillance, and related policies. 
-
-Use your points to buy a response to the scenario. Your options might be limited by how many points you have.
-
-[[Begin scenario 1.|scene-1-scenario]]
+<<include Directions>>
 
 :: scene-1-scenario
-Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony's death by posting photos of him online with the tag #E4A ("Everything for Anthony").
-
-In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
-
-[[Yes|scene-1-choices]]
-
-[[No|scene-1-scenario]]
+<<include Scenario1>>
 
 :: scene-1-choices
-The closest thing to grieving you can do is join in the discussion online. 
-
-You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c]]
+<<include Choices-S1>>
 
 :: scene-1-short-a
-Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
-
-It also gets the attention of the police, who are monitoring the #E4A hastag as it trends online. [[They're following your social media activities now.|scene-1-long-a]]
+<<include Scene1-Short-A>>
 
 :: scene-1-long-a
-Because you had a picture of Anthony attached to your post, the police have flagged you as a likely conspirator of his. You are entered into the NYPD Gang Database as a precaution.
-
-This means that if you get involved with the NYPD again, you will receive added charges in court because you are in the database. 
-
-[[continue|scene-2-scenario]]
-
+<<include Scene1-Long-A>>
 
 :: scene-1-short-b
-Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
-
-A few months later, it catches the attention of the police. [[They're following your social media activities now.|scene-1-long-b]]
+<<include Scene1-Short-B>>
 
 :: scene-1-long-b
-The NYPD has flagged you as at-risk of being involved gang affiliated. They're watching all of your social media activites closely now.
-
-[[continue|scene-2-scenario]]
-
+<<include Scene1-Long-B>>
 
 :: scene-1-short-c
-You decide not to post your thoughts online. What happened to Anthony still hurts, but you try to compartmentalize it.
-
-[[continue|scene-2-scenario]]
+<<include Scene1-Short-C>>
 
 :: scene-2-scenario
 You are in school and hear there will be a fight on campus after school.
