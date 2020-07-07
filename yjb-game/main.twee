@@ -42,40 +42,25 @@ All Eyes On Us
 <<include Scene1-Short-C>>
 
 :: scene-2-scenario
-You are in school and hear there will be a fight on campus after school.
-
-After your last class, you head outside and see a group of people gathering.
-
-You're early enough to get an unobstructed view of the fight. [[Now what?|scene-2-choices]]
+<<include Scenario2>>
 
 :: scene-2-choices
-The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. "A video of [[this would get tons of attention online.|scene-2-short-a]]" you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can't find them. "[[I'll just catch a video for my friends|scene-2-short-b]]; they'd love to have this view." On second thought, you consider backing out of the crowd and finding your friends instead. Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c]]
+<<include Choices-S2>>
 
 :: scene-2-short-a
-Your video blows up! You aren't sure if you caught the best angle of the action or if you were just lucky enough to be the first post people found online, but your video have thousands of views by dinner.
+<<include Scene2-Short-A>>
 
-Some of those views came from your school administrators, who are now convinced that [[you were involved in the fight breaking out.|scene-2-long-a]]
 :: scene-2-long-a 
-You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
-
-[[continue|scene-3-scenario]]
+<<include Scene2-Long-A>>
 
 :: scene-2-short-b
-You manage to catch a good angle of the action for your friends. They're all hyped to see what went down. 
-
-After going your separate ways that evening, you start getting requests to see the video from other kids at school. Word of your fight footage travels all the way to the school's administrators in no time. 
-
-You get called in and your [[phone gets confiscated.|scene-2-long-b]] They're looking for the video you recorded, but who knows what else they'll find?
+<<include Scene2-Short-B>>
 
 :: scene-2-long-b
-You get suspended from school for recording the fight. If things escalate any further between you and the school's dean, law enforcement will become involved. 
-
-[[continue|scene-3-scenario]]
+<<include Scene2-Long-B>>
 
 :: scene-2-short-c
-The fight happens, and multiple people record it. Several people in your grade face severe consequences from school administration for being in the fight. You get off easy with detention though - your face was identified in one of the videos.
-
-[[continue|scene-3-scenario]]
+<<include Scene2-Short-C>>
 
 :: scene-3-scenario
 You find out that a group of people are telling lies about your sister online in an attempt to slut-shame her. You post a comment to defend her. The conflict heats up quickly; soon everyone is posting insults and disrespectful comments.
