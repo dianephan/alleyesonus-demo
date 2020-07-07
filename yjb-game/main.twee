@@ -78,6 +78,8 @@ Some of those views came from your school administrators, who are now convinced 
 :: scene-2-long-a 
 You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
 
+[[continue|scene-3-scenario]]
+
 :: scene-2-short-b
 You manage to catch a good angle of the action for your friends. They're all hyped to see what went down. 
 
@@ -88,17 +90,48 @@ You get called in and your [[phone gets confiscated.|scene-2-long-b]] They're lo
 :: scene-2-long-b
 You get suspended from school for recording the fight. If things escalate any further between you and the school's dean, law enforcement will become involved. 
 
+[[continue|scene-3-scenario]]
+
 :: scene-2-short-c
 The fight happens, and multiple people record it. Several people in your grade face severe consequences from school administration for being in the fight. You get off easy with detention though - your face was identified in one of the videos.
 
+[[continue|scene-3-scenario]]
+
 :: scene-3-scenario
+You find out that a group of people are telling lies about your sister online in an attempt to slut-shame her. You post a comment to defend her. The conflict heats up quickly; soon everyone is posting insults and disrespectful comments.
+
+You need to carefully choose a response to [[keep things from escalating further.|scene-3-choices]]
 
 :: scene-3-choices
+With each passing day, the rumors about your sister spread further. You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a]] That's a lot of effort though. You could probably [[solve the problem online|scene-3-short-b]] by digging up some dirt on the trolls and posting that. Or maybe you don't even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c]] 
 
 :: scene-3-short-a 
+With a few texts, your friends agree to back you up. After school gets out, you and your friends approach the troublemakers. You grab one of them and get in their face - the kid looks scared as fuck; they probably didn't expect this when they started shit talking your sister. You wind up to punch this twerp out when you hear shouting and heavy footsteps coming your way. The next thing you know, you're shoved to the ground with your face in the pavement. 
+
+[[Somebody called the police.|scene-3-long-a]]
 
 :: scene-3-long-a
+You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
+
+They get out of this consequence-free. Meanwhile, at the precinct you find that your charges have been raised because your profile was found in the NYPD's gang database. 
+
+The harrasment your sister was facing online only gets worse.
 
 :: scene-3-short-b 
+You ask around and discover embarassing gossip about the trolls. The posts you make are juicy enough to get some traffic online; it feels like you managed to take the target off of your sister's back. 
+
+When you open the app the next day, it loads the log in page. 
+
+[[Weird|scene-3-long-b]]. 
+
+:: scene-3-long-b
+You enter your email and password but you can't log in. You try changing your password. In your inbox you look for the password reset message and find a message from the site admins; your account has been banned because you were anonymously accused of cyber bullying. 
+
+The next day in school, you get called into the office during class. You're told that you are receiving a suspension because your behavior online went against the school's honor code. 
+
+The harrasment your sister was facing online only gets worse.
 
 :: scene-3-short-c
+The NYPD have a cyberbullying hotline. You submit an anonymous report implicating the twerps that were harassing your sister. 
+
+But nothing happens. The NYPD doesn't do anything because a physical altercation has not occurred. 
