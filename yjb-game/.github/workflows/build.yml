@@ -19,7 +19,7 @@ jobs:
       - name: build game
         run: |
           go get github.com/tmedwards/tweego
-          export PATH=$PATH:$/Users/diane/go/bin
+          export PATH=$PATH:$(go env GOPATH)/bin
           tweego -f sugarcube-2 -o aeou.html yjb-game
 
 
