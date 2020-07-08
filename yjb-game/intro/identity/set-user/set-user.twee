@@ -1,0 +1,15 @@
+:: Set-User
+<<silently>>
+    <<include Set-Race>>
+    <<include Set-Housing>>
+    <<include Set-Neighborhood>>
+    <<include Set-School>>
+    <<set $user = {
+        race:  $raceIdentity,
+        housing: $housingIdentity,
+        neighborhood: $neighborhoodIdentity,
+        school: $schoolIdentity,
+        points: $raceValue + $housingValue + $neighborhoodValue + $schoolValue,
+    }
+    >>
+<</silently>>
