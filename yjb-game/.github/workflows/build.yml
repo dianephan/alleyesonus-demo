@@ -20,7 +20,7 @@ jobs:
         run: |
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$/Users/diane/go/bin
-          tweego main.twee -o dist/index.html
+          tweego -f sugarcube-2 -o aeou.html yjb-game
 
 
       - name: Deploy
