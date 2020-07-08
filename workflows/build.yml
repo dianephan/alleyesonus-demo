@@ -20,8 +20,7 @@ jobs:
         run: |
           go get github.com/tmedwards/tweego
           export PATH=$PATH:$(go env GOPATH)/bin
-          tweego -f sugarcube-2 -o aeou.html yjb-game
-
+          tweego -f sugarcube-2 aeou.html yjb-game -o dist/index.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2
