@@ -1,0 +1,21 @@
+:: Prologue
+<img src="intro/img/cupcakes.jpeg" alt="An image of cupcakes." />
+
+<h1> Hello [[world]] </h1>
+
+create links to external sites <a href="http://www.motoslave.net/sugarcube/2/docs/api-uibar.html">//UIBar//</a>.
+
+text changes //italicize//, use {{{code}}}. 
+<<link "Stow that UIBar!">>
+	<<script>>
+		UIBar.stow();
+	<</script>>
+<</link>>
+
+<<link "Unstow that UIBar!">>
+	<<script>>
+		UIBar.unstow();
+	<</script>>
+<</link>>
+
+[[UI API]]

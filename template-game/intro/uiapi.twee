@@ -1,0 +1,33 @@
+:: UI API
+
+Like the //UIBar// functionality, the <a href="http://www.motoslave.net/sugarcube/2/docs/api-ui.html">//UI//</a> API acts to show different things like the built-in alert or the "Saves", "Settings", "Share", and "Jump-to" dialog windows.
+
+<<button "Open an alert!">>
+	<<script>>
+		UI.alert("An alert");
+	<</script>>
+<</button>>
+
+<<button "Open the 'Saves' dialog">>
+	<<script>>
+		UI.saves();
+	<</script>>
+<</button>>
+
+<<button "Open the 'Settings' dialog">>
+	<<script>>
+		UI.settings();
+	<</script>>
+<</button>>
+
+<<button "Open the 'Share' dialog">>
+	<<script>>
+		UI.share();
+	<</script>>
+<</button>>
+
+<<button "Open the 'Jump-to' dialog">>
+	<<script>>
+		UI.jumpto();
+	<</script>>
+<</button>>
