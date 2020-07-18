@@ -1,6 +1,8 @@
 :: StoryTitle
 All Eyes On Us
 
+<<include BaseStylesheet>>
+
 :: StoryData 
 {
     "ifid": "4D8F5047-56A4-4047-9FDD-06B13FB1346E",
@@ -12,6 +14,15 @@ All Eyes On Us
 
 :: Start 
 Some text for start
+
+:: StoryCaption
+<<if def $user>>
+Race: @@<<= $user.race>>@@
+Housing: @@<<= $user.housing>>@@
+Neighborhood: @@<<= $user.neighborhood>>@@
+School: @@<<= $user.school>>@@
+Total Points: $user.points
+<</if>>
 
 :: Intro 
 <<include Prologue>>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+::BaseStylesheet [stylesheet] html {
+    box-sizing: border-box;
+    /* background-color: #4169E1; */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    --bg-color: #22333B;
+    --primary-color: #5C7457;
+    --secondary-color: #214E34;
+    --highlight-color: #6A0136;
+    --link-color: #46138a;
+    --font-color: #5E6472;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color);
+    /* background-image: linear-gradient(var(--bg-color), var(--secondary-color)); */
+    margin: 0;
+}
+
+#sidebar {
+    display: none;
+}
+
+#passages {
+    padding: 4rem 1.4rem;
+}
+
+.passage {
+    width: 800px;
+    height: auto;
+    margin: auto;
+    padding: 3rem;
+    line-height: 3;
+    border: 10px double #eee;
+    box-shadow: 2px 4px 5px black;
+    background-color: #374586ba;
+}
+
+.passage a {
+    color: #eee;
+    background-color: var(--link-color);
+    padding: .5rem;
+    text-align: center;
+}
+
+.passage a:hover {
+    background-color: var(--primary-color);
+    color: #eee;
+}
+
+#ui-bar {
+    background-color: transparent;
+    border: none;
+    padding: 2rem;
+    width: 21rem;
+}
+
+#ui-bar-body {
+    background-color: var(--primary-color);
+    border: 2px solid white;
+    box-shadow: 2px 4px 5px black;
+    padding: 4rem 1rem;
+    height: 370px;
+    overflow-y: hidden;
+    margin: 3rem 0;
+}
+
+.marked {
+    color: #e0ff2d;
+}
+
+#story-caption {
+    text-align: left;
+    padding: 0 2.1rem;
+}
+
+#ui-bar-body>a {
+    margin: 1rem;
+}
+
+#menu ul {
+    border: none;
+}
+
+#menu li a {
+    margin: 1rem 0;
+    border: none;
+}
+
+#menu li a:hover {
+    background-color: var(--bg-color);
+    color: #eee;
+}
+
+#menu li:not(:first-child) {
+    border: none;
+}
+
+
+
+/* Large screen breakpoint */
+@media screen and (min-width: 800px) {
+    #sidebar {
+        display: none;
+    }
+
+    #passages {
+        padding: 4rem 1.4rem;
+    }
+
+    .passage {
+        width: 800px;
+        min-height: 300px;
+        margin: auto;
+        padding: 3rem;
+        line-height: 3;
+        border: 10px double #eee;
+    }
+
+    .passage a {
+        color: #eee;
+        padding: .5rem;
+    }
+
+    .passage a:hover {
+        background-color: var(--primary-color);
+        color: #eee;
+    }
+
+    #ui-bar-tray button,
+    #ui-bar-history [id|=history] {
+
+        border: 2px solid #e0ff2d;
+    }
+
+    #ui-bar-toggle {
+        border-radius: 20px;
+        right: 0;
+        left: 75%;
+        padding: .3em .5em .2em;
+    }
+
+    #ui-bar-tray {
+        margin-top: 2rem;
+    }
+}
