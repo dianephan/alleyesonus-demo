@@ -6,10 +6,7 @@ Together, these four components determine the number of points that you start wi
 <<silently>>
 <<include Set-User>>
 <</silently>>
-Your race: @@<<= $user.race>>@@
-Your housing: @@<<= $user.housing>>@@
-Your neighborhood: @@<<= $user.neighborhood>>@@
-Your school: @@<<= $user.school>>@@
+Your identity: @@<<= $user.identity>>@@
 Your points: @@$user.points@@
 
 [[Read over the instructions|Instructions]] or [[Begin scenario 1.|scene-1-scenario]]
