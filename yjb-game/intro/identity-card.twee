@@ -4,6 +4,8 @@ Your Identity Card is your character for the game, and gives you four pieces of 
 <<silently>>
 <<include Set-User>>
 <</silently>>
-<<include UserStats "div">>
+Your identity: @@<<= $user.identity>>@@
+Your points: @@$user.points@@
 [[Read over the instructions|Instructions]] or [[Begin scenario 1.|scene-1-scenario]]
+
 

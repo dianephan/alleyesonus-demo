@@ -22,7 +22,7 @@ Race: @@<<= $user.race>>@@
 Housing: @@<<= $user.housing>>@@
 Neighborhood: @@<<= $user.neighborhood>>@@
 School: @@<<= $user.school>>@@
-Points: @@$user.points@@
+Total Points: @@$user.points@@
 
 :: StoryCaption[loaded]
 <<if def $user>><<include UserStats "div">><</if>>
