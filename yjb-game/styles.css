@@ -41,6 +41,26 @@ body {
     background-color: var(--bg-color);
 }
 
+
+.load.ui-close {
+    background-color: var(--secondary-color);
+    border: var(--secondary-color)
+}
+
+.delete:hover {
+    background-color: var(--primary-color);
+}
+
+.delete,
+.save.ui-close {
+    background-color: var(--bg-color);
+}
+
+.buttons button {
+    background-color: var(--primary-color);
+    border: var(--primary-color)
+}
+
 #ui-dialog-titlebar {
     background-color: var(--highlight-color);
 }
