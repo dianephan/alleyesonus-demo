@@ -13,4 +13,54 @@
 <<set $identityValueText to $identityValuePassage.text>>
 <<set $identityValueArray to $identityValueText.split("\n")>>
 <<set $identityValue to parseInt($identityValueArray[$randomNum], 10)>>
+
+// Assigns race for sidebar
+<<if $identity.includes("Black")>>
+    <<set $raceIdentity to "Black">>
+<</if>>
+<<if $identity.includes("Brown")>>
+    <<set $raceIdentity to "Brown">>
+<</if>>
+<<if $identity.includes("White")>>
+    <<set $raceIdentity to "White">>
+<</if>>
+
+// Assigns school for sidebar
+<<if $identity.includes("zoned school")>>
+    <<set $schoolIdentity to "Zoned">>
+<</if>>
+<<if $identity.includes("specialized high school")>>
+    <<set $schoolIdentity to "Specialized">>
+<</if>>
+<<if $identity.includes("private school")>>
+    <<set $schoolIdentity to "Private">>
+<</if>>
+
+// Assigns housing for sidebar
+<<if $identity.includes("shelter")>>
+    <<set $housingIdentity to "Shelter">>
+<</if>>
+<<if $identity.includes("NYCHA")>>
+    <<set $housingIdentity to "NYCHA Housing">>
+<</if>>
+<<if $identity.includes("private rental")>>
+    <<set $housingIdentity to "Private Rental">>
+<</if>>
+<<if $identity.includes("owned home")>>
+    <<set $housingIdentity to "Owned Home">>
+<</if>>
+
+// Assigns neighborhood for sidebar
+<<if $identity.includes("Brownsville")>>
+    <<set $neighborhoodIdentity to "Brownsville">>
+<</if>>
+<<if $identity.includes("Hunts Point")>>
+    <<set $neighborhoodIdentity to "Hunts Point">>
+<</if>>
+<<if $identity.includes("Park Slope")>>
+    <<set $neighborhoodIdentity to "Park Slope">>
+<</if>>
+<<if $identity.includes("Upper West Side")>>
+    <<set $neighborhoodIdentity to "Upper West Side">>
+<</if>>
 <</silently>>
