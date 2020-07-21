@@ -17,10 +17,7 @@ Some text for start
 
 :: StoryCaption
 <<if def $user>>
-Race: @@<<= $user.race>>@@
-Housing: @@<<= $user.housing>>@@
-Neighborhood: @@<<= $user.neighborhood>>@@
-School: @@<<= $user.school>>@@
+Identity: @@<<= $user.identity>>@@
 Total Points: $user.points
 <</if>>
 

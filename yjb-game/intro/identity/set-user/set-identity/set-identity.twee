@@ -1,0 +1,16 @@
+:: Set-Identity
+
+<<silently>>
+// Randomly draws an Identity
+<<set $identityPassage to Story.get("Identity")>>
+<<set $identityText to $identityPassage.text>>
+<<set $identityArray to $identityText.split("\n")>>
+<<set $randomNum to random(1, $identityArray.length-1)>>
+<<set $identity to $identityArray[$randomNum]>>
+
+// Assigns Identity Value
+<<set $identityValuePassage to Story.get("Identity-Value")>>
+<<set $identityValueText to $identityValuePassage.text>>
+<<set $identityValueArray to $identityValueText.split("\n")>>
+<<set $identityValue to parseInt($identityValueArray[$randomNum], 10)>>
+<</silently>>
