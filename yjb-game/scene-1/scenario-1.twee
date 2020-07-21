@@ -2,7 +2,4 @@
 Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony's death by posting photos of him online with the tag #E4A ("Everything for Anthony").
 
 In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
-
-[[Yes|scene-1-choices]]
-
-[[No|scene-1-scenario]]
+[[Yes|scene-1-choices]] | [[No|Scene1-Short-C]]
