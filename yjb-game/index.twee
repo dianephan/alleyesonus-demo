@@ -18,14 +18,11 @@ School: @@<<= $user.school>>@@
 Points: @@$user.points@@
 
 :: UserStats
-Race: @@<<= $user.race>>@@
-Housing: @@<<= $user.housing>>@@
-Neighborhood: @@<<= $user.neighborhood>>@@
-School: @@<<= $user.school>>@@
-Total Points: @@$user.points@@
+Your identity: @@<<= $user.identity>>@@
+Your points: @@$user.points@@
 
 :: StoryCaption[loaded]
-<<if def $user>><<include UserStats "div">><</if>>
+<<if def $user>><<include UserIdentity "div">><</if>>
 
 :: Intro 
 <<include Prologue>>

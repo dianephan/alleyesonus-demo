@@ -3,7 +3,11 @@
     <<include Set-Identity>>
     <<set $user = {
         identity:  $identity,
-        points: $identityValue
+        points: $identityValue,
+        race:  $raceIdentity,
+        housing: $housingIdentity,
+        neighborhood: $neighborhoodIdentity,
+        school: $schoolIdentity,
     }
     >>
 <</silently>>

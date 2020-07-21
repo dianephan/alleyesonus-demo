@@ -71,7 +71,6 @@ body {
 .passage>.passage-userstats {
     background-color: var(--secondary-color);
     padding: 0 5rem;
-    width: 50%;
 }
 
 .passage a {
