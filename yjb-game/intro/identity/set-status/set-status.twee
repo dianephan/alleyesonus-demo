@@ -1,0 +1,15 @@
+:: Set-Status
+
+
+
+
+
+
+
+<<if $user.inGangDb is true && $user.suspended && $user.surveillance>><<set $status to 'You are in the NYPD Gang Database. You have been suspended. You are under surveillance by the NYPD.'>>
+<<elseif $user.suspended is true && $user.surveillance>><<set $status to 'You have been suspended. You are under surveillance by the NYPD.'>>
+<<elseif $user.inGangDb is true && $user.surveillance>><<set $status to 'You are in the NYPD Gang Database. You are under surveillance by the NYPD.'>>
+<<elseif $user.inGangDb is true && $user.suspended>><<set $status to 'You are in the NYPD Gang Database. You have been suspended.'>>
+<<elseif $user.surveillance is true>><<set $status to 'You are under surveillance by the NYPD.'>>
+<<elseif $user.suspended is true>><<set $status to 'You have been suspended.'>>
+<<elseif $user.inGangDb is true>> <<set $status to 'You are in the NYPD Gang Database.'>><</if>>
