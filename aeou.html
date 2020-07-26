@@ -143,6 +143,26 @@ body {
     background-color: var(--bg-color);
 }
 
+
+.load.ui-close {
+    background-color: var(--secondary-color);
+    border: var(--secondary-color)
+}
+
+.delete:hover {
+    background-color: var(--primary-color);
+}
+
+.delete,
+.save.ui-close {
+    background-color: var(--bg-color);
+}
+
+.buttons button {
+    background-color: var(--primary-color);
+    border: var(--primary-color)
+}
+
 #ui-dialog-titlebar {
     background-color: var(--highlight-color);
 }
@@ -190,13 +210,6 @@ body {
     box-shadow: 2px 4px 2px black;
 }
 
-#ui-bar {
-    background-color: transparent;
-    border: none;
-    padding: 2rem;
-    width: 21rem;
-}
-
 #ui-bar-body {
     background-color: var(--highlight-color);
     border: 2px solid white;
@@ -204,7 +217,7 @@ body {
     padding: 4rem 1rem;
     height: 370px;
     overflow-y: hidden;
-    margin: 3rem 0;
+    margin: 3rem 0 3rem 1rem;
 }
 
 .marked {
@@ -218,8 +231,47 @@ body {
     border: 1px solid var(--font-color);
 }
 
+
+#ui-bar {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 21rem;
+}
+
+#ui-bar.stowed {
+    left: -18rem;
+}
+
+#ui-bar-toggle {
+    right: 2%;
+    margin: 0.4rem 0 0 1rem;
+}
+
+#ui-bar.stowed~#story {
+    margin-left: 0;
+}
+
+#story {
+    margin: 0;
+}
+
 #ui-bar-body>a {
     margin: 1rem;
+}
+
+#passages {
+    padding: 2rem 1.4rem;
+    max-width: none;
+    margin: 0 auto;
+}
+
+
+.passage {
+    width: auto;
+    padding: 1rem;
+    white-space: pre-wrap;
+    text-align: justify;
 }
 
 #menu ul {
@@ -240,6 +292,20 @@ body {
     border: none;
 }
 
+#ui-bar-tray button,
+#ui-bar-history [id|=history] {
+    background-color: var(--primary-color);
+    border: 2px solid #ffffff;
+}
+
+#ui-bar-toggle {
+    border-radius: 20px;
+}
+
+.passage>.passage-userstats {
+    padding: 0.5rem;
+}
+
 
 /* Large screen breakpoint */
 @media screen and (min-width: 800px) {
@@ -249,6 +315,8 @@ body {
 
     #passages {
         padding: 4rem 1.4rem;
+        max-width: 54em;
+        margin: 0 auto;
     }
 
     .passage {
@@ -258,6 +326,7 @@ body {
         padding: 3rem;
         line-height: 3;
         border: 10px double var(--font-color);
+        white-space: break-spaces;
     }
 
     .passage a {
@@ -270,26 +339,53 @@ body {
         color: var(--font-color);
     }
 
-    #ui-bar-tray button,
-    #ui-bar-history [id|=history] {
-
-        border: 2px solid #ffffff;
+    #ui-bar {
+        background-color: transparent;
+        border: none;
+        padding: 2rem;
+        width: 21rem;
     }
 
     #ui-bar-toggle {
-        border-radius: 20px;
         right: 0;
         left: 75%;
         padding: .3em .5em .2em;
+        background-color: transparent;
+    }
+
+    #ui-bar-tray {
+        margin-top: 2rem;
+        position: absolute;
+        top: .2em;
+        left: 0;
+        right: 0;
+    }
+
+    #ui-bar-body {
+        background-color: var(--highlight-color);
+        border: 2px solid white;
+        box-shadow: 2px 4px 5px black;
+        padding: 4rem 1rem;
+        height: 370px;
+        overflow-y: hidden;
+        margin: 3rem 0;
+    }
+
+    #story {
+        z-index: 10;
+        margin: 2.5em;
+        margin-left: 20em;
+    }
+
+    #ui-bar-tray button,
+    #ui-bar-history [id|=history] {
+        border: 2px solid #ffffff;
+        background-color: transparent;
     }
 
     #ui-bar-tray button:hover,
     #ui-bar-history [id|=history]:hover {
         background-color: var(--primary-color);
-    }
-
-    #ui-bar-tray {
-        margin-top: 2rem;
     }
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="UserIdentity" tags="" position="100,100" size="100,100">Race: @@&lt;&lt;= $user.race&gt;&gt;@@
 Housing: @@&lt;&lt;= $user.housing&gt;&gt;@@
@@ -431,7 +527,14 @@ It also gets the attention of the police, who are monitoring the #E4A hastag as 
 
 A few months later, it catches the attention of the police. [[They&#39;re following your social media activities now.|scene-1-long-b]]</tw-passagedata><tw-passagedata pid="49" name="Scene1-Short-C" tags="" position="1100,600" size="100,100">You decide not to post your thoughts online. What happened to Anthony still hurts, but you try to compartmentalize it.
 
-[[Continue|scene-2-scenario]]</tw-passagedata><tw-passagedata pid="50" name="Choices-S2" tags="" position="1225,600" size="100,100">The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. &quot;A video of [[this would get tons of attention online.|scene-2-short-a]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. &quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b]]; they&#39;d love to have this view.&quot; On second thought, you consider backing out of the crowd and finding your friends instead. Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c]]</tw-passagedata><tw-passagedata pid="51" name="Scene2-Long-A" tags="" position="100,725" size="100,100">You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
+[[Continue|scene-2-scenario]]</tw-passagedata><tw-passagedata pid="50" name="Choices-S2" tags="" position="1225,600" size="100,100">The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. 
+
+&quot;A video of [[this would get tons of attention online.|scene-2-short-a]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. 
+
+&quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b]]; they&#39;d love to have this view.&quot; 
+
+On second thought, you consider backing out of the crowd and finding your friends instead. 
+Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c]]</tw-passagedata><tw-passagedata pid="51" name="Scene2-Long-A" tags="" position="100,725" size="100,100">You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
 
 [[Continue|scene-3-scenario]]</tw-passagedata><tw-passagedata pid="52" name="Scene2-Long-B" tags="" position="225,725" size="100,100">You get suspended from school for recording the fight. If things escalate any further between you and the school&#39;s dean, law enforcement will become involved. 
 
@@ -445,7 +548,13 @@ After going your separate ways that evening, you start getting requests to see t
 
 You get called in and your [[phone gets confiscated.|scene-2-long-b]] They&#39;re looking for the video you recorded, but who knows what else they&#39;ll find?</tw-passagedata><tw-passagedata pid="56" name="Scene2-Short-C" tags="" position="725,725" size="100,100">The fight happens, and multiple people record it. Several people in your grade face severe consequences from school administration for being in the fight. You get off easy with detention though - your face was identified in one of the videos.
 
-[[Continue|scene-3-scenario]]</tw-passagedata><tw-passagedata pid="57" name="Choices-S3" tags="" position="850,725" size="100,100">With each passing day, the rumors about your sister spread further. You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a]] That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b]] by digging up some dirt on the trolls and posting that. Or maybe you don&#39;t even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c]]</tw-passagedata><tw-passagedata pid="58" name="Scene3-Long-A" tags="" position="975,725" size="100,100">You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
+[[Continue|scene-3-scenario]]</tw-passagedata><tw-passagedata pid="57" name="Choices-S3" tags="" position="850,725" size="100,100">With each passing day, the rumors about your sister spread further. 
+
+You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a]] 
+
+That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b]] by digging up some dirt on the trolls and posting that. 
+
+Or maybe you don&#39;t even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c]]</tw-passagedata><tw-passagedata pid="58" name="Scene3-Long-A" tags="" position="975,725" size="100,100">You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
 
 They get out of this consequence-free. Meanwhile, at the precinct you find that your charges have been raised because your profile was found in the NYPD&#39;s gang database. 
 
