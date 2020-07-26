@@ -1,4 +1,11 @@
 :: Scene2-Long-A
 You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
-
+<<if $user.inGangDb is true>>
+    During your suspension, you are sent to court and receive added charges because your profile was found in the NYPD's gang database.
+<</if>>
+<<silently>>
+<<set $user.suspended to true>>
+<<include Set-Status>>
+<<set $user.status to $status>>
+<</silently>>
 [[Continue|scene-3-scenario]]

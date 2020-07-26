@@ -2,5 +2,16 @@
 You enter your email and password but you can't log in. You try changing your password. In your inbox you look for the password reset message and find a message from the site admins; your account has been banned because you were anonymously accused of cyber bullying. 
 
 The next day in school, you get called into the office during class. You're told that you are receiving a suspension because your behavior online went against the school's honor code. 
-
+<<if $user.inGangDb is false>> 
+    In addition, you were placed in the NYPD Gang Database.
+<</if>>
 The harrasment your sister was facing online only gets worse.
+<<silently>>
+<<if $user.suspended is false>>
+    <<set $user.suspended to true>>
+    <<include Set-Status>>
+    <<set $user.status to $status>>
+<</if>>
+<</silently>>
+
+[[Finale|finale]]

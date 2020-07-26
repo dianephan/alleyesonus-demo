@@ -1,6 +1,10 @@
 :: Scene3-Long-A
 You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
 
-They get out of this consequence-free. Meanwhile, at the precinct you find that your charges have been raised because your profile was found in the NYPD's gang database. 
-
+They get out of this consequence-free. 
+<<if $user.inGangDb is true>> 
+     Meanwhile, at the precinct you find that your charges have been raised because your profile was found in the NYPD's gang database.
+<</if>>
 The harrasment your sister was facing online only gets worse.
+
+[[Finale|finale]]

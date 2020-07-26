@@ -1,6 +1,10 @@
 :: Scene1-Long-B
-The NYPD has flagged you as at-risk of being involved gang affiliated. They're watching all of your social media activites closely now.
-
+The NYPD has flagged you as at-risk of being gang affiliated. They're watching all of your social media activities closely now.
+<<silently>>
+<<set $user.surveillance to true>>
+<<include Set-Status>>
+<<set $user.status to $status>>
+<</silently>>
 [[Continue|scene-2-scenario]]
 
 

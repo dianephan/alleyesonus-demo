@@ -1,4 +1,9 @@
 :: Scene2-Long-B
 You get suspended from school for recording the fight. If things escalate any further between you and the school's dean, law enforcement will become involved. 
 
+<<silently>>
+<<set $user.suspended to true>>
+<<include Set-Status>>
+<<set $user.status to $status>>
+<</silently>>
 [[Continue|scene-3-scenario]]
