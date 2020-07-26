@@ -16,6 +16,9 @@ Housing: @@<<= $user.housing>>@@
 Neighborhood: @@<<= $user.neighborhood>>@@
 School: @@<<= $user.school>>@@
 Points: @@$user.points@@
+<<include UserWarning "div">>
+
+:: UserWarning
 <<if $user.status is not ''>>Warning: <</if>>@@<<= $user.status>>@@
 
 :: UserStats
