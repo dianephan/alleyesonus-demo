@@ -8,6 +8,10 @@
         housing: $housingIdentity,
         neighborhood: $neighborhoodIdentity,
         school: $schoolIdentity,
+        inGangDb: false,
+        suspended: false,
+        surveillance: false,
+        status: ''
     }
     >>
 <</silently>>
