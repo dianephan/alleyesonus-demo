@@ -22,6 +22,12 @@ body {
     margin: 0;
 }
 
+.passage ul {
+    margin-left: 0;
+    white-space: none;
+    text-align: none;
+}
+
 #ui-dialog-body {
     background-color: var(--highlight-color);
     border: none;
@@ -34,6 +40,10 @@ body {
 #ui-dialog-title {
     margin: 1rem;
     padding: .5rem;
+}
+
+#ui-bar-history {
+    display: none;
 }
 
 #restart-ok,
@@ -73,8 +83,6 @@ body {
     padding: 0.5rem;
     margin-top: 0.5rem;
 }
-
-
 
 #ui-dialog-titlebar {
     background-color: var(--highlight-color);
@@ -144,7 +152,7 @@ body {
     background-color: transparent;
     border: none;
     padding: 0;
-    width: 21rem;
+    width: 95%;
 }
 
 #ui-bar.stowed {
@@ -294,5 +302,11 @@ body {
     #ui-bar-tray button:hover,
     #ui-bar-history [id|=history]:hover {
         background-color: var(--primary-color);
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #ui-bar {
+        left: 10%;
     }
 }
