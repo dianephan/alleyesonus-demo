@@ -106,9 +106,14 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage>.passage-userstats {
+.passage>.passage-userstats,
+.passage>.passage-databasestats {
     background-color: var(--secondary-color);
     padding: 1rem;
+}
+
+.passage>.passage-databasestats {
+    margin-top: 1rem;
 }
 
 .passage a {

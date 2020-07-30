@@ -1,0 +1,6 @@
+::DatabaseStats
+Data pulled straight from Google Sheets:
+<<repeat 1s>><<if $response != undefined>>@@Identity Id:@@ <<print $identityId>> 
+@@Database query:@@ <<print $query>>
+@@Database response:@@ <<print $response>><<stop>><</if>>
+<</repeat>>
