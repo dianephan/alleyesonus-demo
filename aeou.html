@@ -124,6 +124,12 @@ body {
     margin: 0;
 }
 
+.passage ul {
+    margin-left: 0;
+    white-space: none;
+    text-align: none;
+}
+
 #ui-dialog-body {
     background-color: var(--highlight-color);
     border: none;
@@ -136,6 +142,10 @@ body {
 #ui-dialog-title {
     margin: 1rem;
     padding: .5rem;
+}
+
+#ui-bar-history {
+    display: none;
 }
 
 #restart-ok,
@@ -176,8 +186,6 @@ body {
     margin-top: 0.5rem;
 }
 
-
-
 #ui-dialog-titlebar {
     background-color: var(--highlight-color);
 }
@@ -200,9 +208,14 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage>.passage-userstats {
+.passage>.passage-userstats,
+.passage>.passage-databasestats {
     background-color: var(--secondary-color);
     padding: 1rem;
+}
+
+.passage>.passage-databasestats {
+    margin-top: 1rem;
 }
 
 .passage a {
@@ -246,7 +259,7 @@ body {
     background-color: transparent;
     border: none;
     padding: 0;
-    width: 21rem;
+    width: 95%;
 }
 
 #ui-bar.stowed {
@@ -397,7 +410,59 @@ body {
     #ui-bar-history [id|=history]:hover {
         background-color: var(--primary-color);
     }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="finale" tags="" position="100,100" size="100,100">Thank you for playing our game. If you are interested in learning more about how you can get involved with protecting our youth, you can explore these references:
+}
+
+@media screen and (min-width: 1600px) {
+    #ui-bar {
+        left: 10%;
+    }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">setup.firebaseApp = importScripts(["https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js", 
+"https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js", "/Users/chiazo/code/alleyesonus-demo/firebase.js"]);
+
+setup.firebaseApp.then(function() {
+
+  firebase.initializeApp(firebaseConfig);
+  
+  const database = firebase.database();
+  const identity = database.ref("identities")
+  console.log(firebaseConfig)
+
+  function getScenarioName(scenarioNum, type, num) {
+      let scenarioName = 'Scenario_' + scenarioNum + '_';
+      if (type === 'choice') {
+        scenarioName += 'choice_' + num; 
+      } else if (type === 'short') {
+        scenarioName += 'short_term_' + num; 
+      } else {
+        scenarioName += 'long_term_' + num; 
+      }
+      return scenarioName;
+  }
+
+  function setUpScenarioObj(scenarioNum, type, num) {
+      return {
+        [getScenarioName(scenarioNum, type, num)]: {
+              count: 0,
+          }
+      }
+  }
+    let obj = {};
+    for (let i = 1; i < 4; i++) {
+        for (let j = 1; j <= 2; j++) {
+            const result = setUpScenarioObj(i, "long", j)
+            obj = {...obj, ...result};
+        }
+    }
+
+    console.log(obj)
+
+//    for (let i = 1; i < 7; i++) {
+//     database.ref('identities/' + i).update(obj)
+//   }   
+})
+.catch((e) => {
+    console.log(e)
+})</script><tw-passagedata pid="1" name="finale" tags="" position="100,100" size="100,100">Thank you for playing our game. If you are interested in learning more about how you can get involved with protecting our youth, you can explore these references:
 
 &lt;ul&gt;
     &lt;li&gt; Learn more about the &lt;a href=&quot;https://www.courtinnovation.org/about/announcements/social-media-surveillance&quot;&gt;All Eyes on Us project.&lt;/a&gt; &lt;/li&gt;

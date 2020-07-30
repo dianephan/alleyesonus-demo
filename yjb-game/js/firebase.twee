@@ -1,0 +1,53 @@
+
+::Firebase[script]
+
+// import firebase + our secret key info from the root of the project
+setup.firebaseApp = importScripts([
+    "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js", 
+    "https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js", 
+    "/Users/chiazo/code/alleyesonus-demo/firebase.js"]);
+    
+    setup.firebaseApp.then(function() {
+    
+      firebase.initializeApp(firebaseConfig);
+      
+      const database = firebase.database();
+      const identity = database.ref("identities")
+    
+      function getScenarioName(scenarioNum, type, num) {
+          let scenarioName = 'Scenario_' + scenarioNum + '_';
+          if (type === 'choice') {
+            scenarioName += 'choice_' + num; 
+          } else if (type === 'short') {
+            scenarioName += 'short_term_' + num; 
+          } else {
+            scenarioName += 'long_term_' + num; 
+          }
+          return scenarioName;
+      }
+    
+      function setUpScenarioObj(scenarioNum, type, num) {
+          return {
+            [getScenarioName(scenarioNum, type, num)]: {
+                  count: 0,
+              }
+          }
+      }
+      
+        let obj = {};
+        for (let i = 1; i < 4; i++) {
+            for (let j = 1; j <= 2; j++) {
+                const result = setUpScenarioObj(i, "long", j)
+                obj = {...obj, ...result};
+            }
+        }
+    
+        console.log(obj)
+    
+    //    for (let i = 1; i < 7; i++) {
+    //     database.ref('identities/' + i).update(obj)
+    //   }   
+    })
+    .catch((e) => {
+        console.log(e)
+    })
