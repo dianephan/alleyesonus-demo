@@ -540,7 +540,7 @@ The problem is far worse, and way closer to home, than the news lets on.
 The stories presented here will help you understand what&#39;s at risk.
 
 To continue [[Draw an Identity Card.|Identity-Card]]</tw-passagedata><tw-passagedata pid="46" name="Choices-S1" tags="" position="725,600" size="100,100">You choose to grieve by joining the discussions online. 
-You decide to [[post a picture|scene-1-short-a][$identityValue = $identityValue - 0]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b][$identityValue = $identityValue - 200]] You aren&#39;t sure what&#39;s too extra to post, since [[you don&#39;t use social media often.|scene-1-short-c][$identityValue = $identityValue - 300]]</tw-passagedata><tw-passagedata pid="47" name="Scene1-Long-A" tags="" position="850,600" size="100,100">Because you had a picture of Anthony attached to your post, the police have flagged you as a likely conspirator of his. You are entered into the NYPD Gang Database as a precaution.
+You decide to [[post a picture|scene-1-short-a][$user.points = $user.points - 0]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b][$user.points = $user.points - 200]] You aren&#39;t sure what&#39;s too extra to post, since [[you don&#39;t use social media often.|scene-1-short-c][$user.points = $user.points - 300]]</tw-passagedata><tw-passagedata pid="47" name="Scene1-Long-A" tags="" position="850,600" size="100,100">Because you had a picture of Anthony attached to your post, the police have flagged you as a likely conspirator of his. You are entered into the NYPD Gang Database as a precaution.
 
 This means that if you get involved with the NYPD again, you will receive added charges in court because you are in the database. 
 &lt;&lt;silently&gt;&gt;
@@ -557,7 +557,7 @@ This means that if you get involved with the NYPD again, you will receive added 
 [[Continue|scene-2-scenario]]</tw-passagedata><tw-passagedata pid="49" name="Scenario1" tags="" position="1100,600" size="100,100">Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony&#39;s death by posting photos of him online with the tag #E4A (&quot;Everything for Anthony&quot;).
 
 In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
-[[Yes|scene-1-choices][$identityValue = $identityValue - 0]] | [[No|Scene1-Short-C][$identityValue = $identityValue - 100 ]]</tw-passagedata><tw-passagedata pid="50" name="Scene1-Short-A" tags="" position="1225,600" size="100,100">Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
+[[Yes|scene-1-choices][$user.points = $user.points - 0]] | [[No|Scene1-Short-C][$user.points = $user.points - 300 ]]</tw-passagedata><tw-passagedata pid="50" name="Scene1-Short-A" tags="" position="1225,600" size="100,100">Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
 
 It also gets the attention of the police, who are monitoring the #E4A hashtag as it trends online. [[They&#39;re following your social media activities now.|scene-1-long-a]]</tw-passagedata><tw-passagedata pid="51" name="Scene1-Short-B" tags="" position="100,725" size="100,100">Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
 
@@ -565,12 +565,15 @@ A few months later, it catches the attention of the police. [[They&#39;re follow
 
 [[Continue|scene-2-scenario]]</tw-passagedata><tw-passagedata pid="53" name="Choices-S2" tags="" position="350,725" size="100,100">The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. 
 
-&quot;A video of [[this would get tons of attention online.|scene-2-short-a][$identityValue = $identityValue - 0]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. 
+&quot;A video of [[this would get tons of attention online.|scene-2-short-a][$user.points = $user.points - 0]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. 
+&lt;&lt;if $user.points &gt;= 200&gt;&gt;
+&quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b][$user.points = $user.points - 200]]; they&#39;d love to have this view.&quot; 
+&lt;&lt;/if&gt;&gt;
 
-&quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b][$identityValue = $identityValue - 200]]; they&#39;d love to have this view.&quot; 
-
+&lt;&lt;if $user.points &gt;= 370&gt;&gt; 
 On second thought, you consider backing out of the crowd and finding your friends instead. 
-Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c][$identityValue = $identityValue - 370]]</tw-passagedata><tw-passagedata pid="54" name="Scene2-Long-A" tags="" position="475,725" size="100,100">You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
+Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c][$user.points = $user.points - 370]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="Scene2-Long-A" tags="" position="475,725" size="100,100">You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
 &lt;&lt;if $user.inGangDb is true&gt;&gt;
     During your suspension, you are sent to court and receive added charges because your profile was found in the NYPD&#39;s gang database.
 &lt;&lt;/if&gt;&gt;
@@ -598,11 +601,15 @@ You get called in and your [[phone gets confiscated.|scene-2-long-b]] They&#39;r
 
 [[Continue|scene-3-scenario]]</tw-passagedata><tw-passagedata pid="60" name="Choices-S3" tags="" position="1225,725" size="100,100">With each passing day, the rumors about your sister spread further. 
 
-You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a][$identityValue = $identityValue - 0]] 
+You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a][$user.points = $user.points - 0]] 
 
-That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b][$identityValue = $identityValue - 200]] by digging up some dirt on the trolls and posting that. 
+&lt;&lt;if $user.points &gt;= 200&gt;&gt;
+That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b][$user.points = $user.points - 200]] by digging up some dirt on the trolls and posting that. 
+&lt;&lt;/if&gt;&gt;
 
-Or maybe you don&#39;t even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c][$identityValue = $identityValue - 370]]</tw-passagedata><tw-passagedata pid="61" name="Scene3-Long-A" tags="" position="100,850" size="100,100">You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
+&lt;&lt;if $user.points &gt;= 370&gt;&gt; 
+Or maybe you don&#39;t even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c][$user.points = $user.points - 370]] 
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="Scene3-Long-A" tags="" position="100,850" size="100,100">You and your friends are apprehended by the NYPD. Out the back window of the squad car, you catch a glimpse of the jerks you were fighting. They are all lined up with smirks on their faces, waiting their turn to talk with the officer collecting statements.
 
 They get out of this consequence-free. 
 &lt;&lt;if $user.inGangDb is true&gt;&gt; 
