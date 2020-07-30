@@ -15,6 +15,7 @@ Race: @@<<= $user.race>>@@
 Housing: @@<<= $user.housing>>@@
 Neighborhood: @@<<= $user.neighborhood>>@@
 School: @@<<= $user.school>>@@
+Identity Id: @@<<= $user.identityId>>@@
 Points: @@$user.points@@
 <<include UserWarning "div">>
 

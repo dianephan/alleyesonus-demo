@@ -1,4 +1,8 @@
 :: Scene3-Short-B
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(3, "short", 2)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 You ask around and discover embarrassing gossip about the trolls. The posts you make are juicy enough to get some traffic online. It feels like you managed to take the target off of your sister's back. 
 
 When you open the app the next day, it loads the login page. 

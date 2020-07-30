@@ -1,3 +1,7 @@
 :: Choices-S1
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(1, "choice", 1)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 You choose to grieve by joining the discussions online. 
 You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c]]

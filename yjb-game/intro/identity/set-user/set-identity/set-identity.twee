@@ -64,3 +64,5 @@
     <<set $neighborhoodIdentity to "Upper West Side">>
 <</if>>
 <</silently>>
+
+<<set $identityId to setup.getIdentityId($raceIdentity, $neighborhoodIdentity, $schoolIdentity, $housingIdentity)>>
