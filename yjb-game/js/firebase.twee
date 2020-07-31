@@ -29,7 +29,7 @@ setup.getScenarioName = function (scenarioNum, type, num) {
 setup.firebaseApp = importScripts([
   "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js",
   "https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js",
-  "/Users/chiazo/code/alleyesonus-demo/firebase.js",
+  "firebase.js",
 ]);
 
 setup.firebaseApp
