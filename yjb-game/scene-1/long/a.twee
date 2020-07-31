@@ -1,4 +1,8 @@
 :: Scene1-Long-A
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(1, "long", 1)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 Because you had a picture of Anthony attached to your post, the police have flagged you as a likely conspirator of his. You are entered into the NYPD Gang Database as a precaution.
 
 This means that if you get involved with the NYPD again, you will receive added charges in court because you are in the database. 

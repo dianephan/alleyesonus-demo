@@ -1,4 +1,8 @@
 :: Scene1-Short-B
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(1, "short", 2)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 Your picture gets some attention from your followers online. They mourn with you, and you feel a little better for it. 
 
 A few months later, it catches the attention of the police. [[They're following your social media activities now.|scene-1-long-b]]

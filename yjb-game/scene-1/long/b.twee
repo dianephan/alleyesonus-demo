@@ -1,4 +1,8 @@
 :: Scene1-Long-B
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(1, "long", 2)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 The NYPD has flagged you as at-risk of being gang affiliated. They're watching all of your social media activities closely now.
 <<silently>>
 <<set $user.surveillance to true>>

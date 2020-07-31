@@ -1,4 +1,8 @@
 :: Scene2-Short-C
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(2, "short", 3)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 The fight happens, and multiple people record it. Several people in your grade face severe consequences from school administration for being in the fight. You get off easy with detention though - your face was identified in one of the videos.
 
 [[Continue|scene-3-scenario]]

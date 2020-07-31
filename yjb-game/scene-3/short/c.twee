@@ -1,4 +1,8 @@
 :: Scene3-Short-C
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(3, "short", 3)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 The NYPD have a cyberbullying hotline. You submit an anonymous report implicating the twerps that were harassing your sister. 
 
 But nothing happens. The NYPD doesn't do anything because a physical altercation has not occurred. 

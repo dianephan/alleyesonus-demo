@@ -1,5 +1,8 @@
 :: Choices-S3
-
+<<silently>>
+<<set $scenarioName to setup.getScenarioName(3, "choice", 1)>>
+<<run setup.updateDatabase($scenarioName, $identityId)>>
+<</silently>>
 With each passing day, the rumors about your sister spread further. 
 
 You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a][$user.points = $user.points - 0]] 
