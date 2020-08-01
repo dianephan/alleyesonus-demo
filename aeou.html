@@ -669,6 +669,7 @@ The NYPD has flagged you as at-risk of being gang affiliated. They&#39;re watchi
 [[Continue|scene-2-scenario]]</tw-passagedata><tw-passagedata pid="49" name="Scenario1" tags="" position="1100,600" size="100,100">Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony&#39;s death by posting photos of him online with the tag #E4A (&quot;Everything for Anthony&quot;).
 
 In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
+
 [[Yes|scene-1-choices]] | [[No|Scene1-Short-C]]</tw-passagedata><tw-passagedata pid="50" name="Scene1-Short-A" tags="" position="1225,600" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $scenarioName to setup.getScenarioName(1, &quot;short&quot;, 1)&gt;&gt;
 &lt;&lt;run setup.updateDatabase($scenarioName, $identityId)&gt;&gt;
@@ -693,16 +694,20 @@ You decide not to post your thoughts online. What happened to Anthony still hurt
 &lt;&lt;/silently&gt;&gt;
 The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. 
 
-&quot;A video of [[this would get tons of attention online.|scene-2-short-a]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. 
+&quot;A video of [[this would get tons of attention online.|scene-2-short-a][$user.points = $user.points - 0]]&quot; you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can&#39;t find them. 
+&lt;&lt;if $user.points &gt;= 200&gt;&gt;
+&quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b][$user.points = $user.points - 200]]; they&#39;d love to have this view.&quot; 
+&lt;&lt;/if&gt;&gt;
 
-&quot;[[I&#39;ll just catch a video for my friends|scene-2-short-b]]; they&#39;d love to have this view.&quot; 
-
+&lt;&lt;if $user.points &gt;= 370&gt;&gt; 
 On second thought, you consider backing out of the crowd and finding your friends instead. 
+
 Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c]]</tw-passagedata><tw-passagedata pid="54" name="Scene2-Long-A" tags="" position="475,725" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $scenarioName to setup.getScenarioName(2, &quot;long&quot;, 1)&gt;&gt;
 &lt;&lt;run setup.updateDatabase($scenarioName, $identityId)&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 You get suspended from school for recording the fight. Posting the video online only made things worse for you, as it gave them evidence to get the NYPD resource officers involved. They open a case on you.
+
 &lt;&lt;if $user.inGangDb is true&gt;&gt;
     During your suspension, you are sent to court and receive added charges because your profile was found in the NYPD&#39;s gang database.
 &lt;&lt;/if&gt;&gt;
@@ -750,9 +755,11 @@ The fight happens, and multiple people record it. Several people in your grade f
 &lt;&lt;/silently&gt;&gt;
 With each passing day, the rumors about your sister spread further. 
 
-You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a]] 
+You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a][$user.points = $user.points - 0]] 
 
-That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b]] by digging up some dirt on the trolls and posting that. 
+&lt;&lt;if $user.points &gt;= 200&gt;&gt;
+That&#39;s a lot of effort though. You could probably [[solve the problem online|scene-3-short-b][$user.points = $user.points - 200]] by digging up some dirt on the trolls and posting that. 
+&lt;&lt;/if&gt;&gt;
 
 Or maybe you don&#39;t even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c]]</tw-passagedata><tw-passagedata pid="61" name="Scene3-Long-A" tags="" position="100,850" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $scenarioName to setup.getScenarioName(3, &quot;long&quot;, 1)&gt;&gt;
