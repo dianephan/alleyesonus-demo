@@ -1,5 +1,11 @@
 ::Firebase[script]
 
+const favico = document.createElement("link");
+favico.rel = "icon";
+favico.type = "image/png";
+favico.href = "images/favicon.png";
+document.head.appendChild(favico);
+
 setup.getIdentityId = function (race, neighborhood, school, housing) {
   if (race === "Black") {
     if (neighborhood === "Brownsville") return 1;
@@ -46,6 +52,22 @@ setup.firebaseApp
         .child("count")
         .set(firebase.database.ServerValue.increment(1));
     };
+
+    setup.getFinalStats = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .on("value", function (result) {
+          getStats(scenarioName, identityId, result);
+        });
+    };
+
+    function getStats(scenarioName, identityId, result) {
+      State.variables.entireIdentity = scenarioName + " - " + identityId;
+      State.variables.hello = result.val();
+    }
   })
   .catch((e) => {
     console.log(e);

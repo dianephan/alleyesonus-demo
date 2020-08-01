@@ -106,14 +106,8 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage>.passage-userstats,
-.passage>.passage-databasestats {
+.passage>.passage-userstats {
     background-color: var(--secondary-color);
-    padding: 1rem;
-}
-
-.passage>.passage-databasestats {
-    margin-top: 1rem;
 }
 
 .passage a {
@@ -161,7 +155,7 @@ body {
 }
 
 #ui-bar.stowed {
-    left: -18rem;
+    left: -87%;
 }
 
 #ui-bar-toggle {
@@ -189,6 +183,7 @@ body {
 
 
 .passage {
+    font-size: 13px;
     width: auto;
     padding: 1rem;
     white-space: pre-wrap;
@@ -224,9 +219,15 @@ body {
 }
 
 .passage>.passage-userstats {
-    padding: 0.5rem;
+    padding: 1rem;
+    text-align: center;
 }
 
+@media screen and (min-width: 630px) {
+    #ui-bar.stowed {
+        left: -89%;
+    }
+}
 
 /* Large screen breakpoint */
 @media screen and (min-width: 800px) {
@@ -241,6 +242,7 @@ body {
     }
 
     .passage {
+        font-size: 16px;
         width: 800px;
         min-height: 300px;
         margin: auto;
@@ -265,6 +267,10 @@ body {
         border: none;
         padding: 2rem;
         width: 21rem;
+    }
+
+    #ui-bar.stowed {
+        left: -18rem;
     }
 
     #ui-bar-toggle {

@@ -1,7 +1,10 @@
 :: Choices-S1
-<<silently>>
-<<set $scenarioName to setup.getScenarioName(1, "choice", 1)>>
-<<run setup.updateDatabase($scenarioName, $identityId)>>
-<</silently>>
+<<silently>><<set $scenarioName to setup.getScenarioName(1, "choice", 1)>><<run setup.updateDatabase($scenarioName, $identityId)>><<run setup.getFinalStats($scenarioName, $identityId)>><</silently>>
+<<repeat 1s>><<if $hello != undefined>>Count: <<print $hello>>
+Identity: <<print $entireIdentity>><<stop>><</if>>
+<</repeat>>
+
 You choose to grieve by joining the discussions online. 
-You decide to [[post a picture|scene-1-short-a][$user.points = $user.points - 0]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b][$user.points = $user.points - 200]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c][$user.points = $user.points - 300]]
+
+You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c]]
+

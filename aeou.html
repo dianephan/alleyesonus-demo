@@ -208,14 +208,8 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage>.passage-userstats,
-.passage>.passage-databasestats {
+.passage>.passage-userstats {
     background-color: var(--secondary-color);
-    padding: 1rem;
-}
-
-.passage>.passage-databasestats {
-    margin-top: 1rem;
 }
 
 .passage a {
@@ -263,7 +257,7 @@ body {
 }
 
 #ui-bar.stowed {
-    left: -18rem;
+    left: -87%;
 }
 
 #ui-bar-toggle {
@@ -291,6 +285,7 @@ body {
 
 
 .passage {
+    font-size: 13px;
     width: auto;
     padding: 1rem;
     white-space: pre-wrap;
@@ -326,9 +321,15 @@ body {
 }
 
 .passage>.passage-userstats {
-    padding: 0.5rem;
+    padding: 1rem;
+    text-align: center;
 }
 
+@media screen and (min-width: 630px) {
+    #ui-bar.stowed {
+        left: -89%;
+    }
+}
 
 /* Large screen breakpoint */
 @media screen and (min-width: 800px) {
@@ -343,6 +344,7 @@ body {
     }
 
     .passage {
+        font-size: 16px;
         width: 800px;
         min-height: 300px;
         margin: auto;
@@ -367,6 +369,10 @@ body {
         border: none;
         padding: 2rem;
         width: 21rem;
+    }
+
+    #ui-bar.stowed {
+        left: -18rem;
     }
 
     #ui-bar-toggle {
@@ -416,7 +422,13 @@ body {
     #ui-bar {
         left: 10%;
     }
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">setup.getIdentityId = function (race, neighborhood, school, housing) {
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">const favico = document.createElement("link");
+favico.rel = "icon";
+favico.type = "image/png";
+favico.href = "images/favicon.png";
+document.head.appendChild(favico);
+
+setup.getIdentityId = function (race, neighborhood, school, housing) {
   if (race === "Black") {
     if (neighborhood === "Brownsville") return 1;
     return 2;
@@ -462,6 +474,22 @@ setup.firebaseApp
         .child("count")
         .set(firebase.database.ServerValue.increment(1));
     };
+
+    setup.getFinalStats = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .on("value", function (result) {
+          getStats(scenarioName, identityId, result);
+        });
+    };
+
+    function getStats(scenarioName, identityId, result) {
+      State.variables.entireIdentity = scenarioName + " - " + identityId;
+      State.variables.hello = result.val();
+    }
   })
   .catch((e) => {
     console.log(e);
@@ -476,7 +504,6 @@ For more information on the topics discussed in this gameplay, refer to these re
 Housing: @@&lt;&lt;= $user.housing&gt;&gt;@@
 Neighborhood: @@&lt;&lt;= $user.neighborhood&gt;&gt;@@
 School: @@&lt;&lt;= $user.school&gt;&gt;@@
-Identity Id: @@&lt;&lt;= $user.identityId&gt;&gt;@@
 Points: @@$user.points@@
 &lt;&lt;include UserWarning &quot;div&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="UserWarning" tags="" position="350,100" size="100,100">&lt;&lt;if $user.status is not &#39;&#39;&gt;&gt;Warning: &lt;&lt;/if&gt;&gt;@@&lt;&lt;= $user.status&gt;&gt;@@</tw-passagedata><tw-passagedata pid="4" name="UserStats" tags="" position="475,100" size="100,100">Your identity: @@&lt;&lt;= $user.identity&gt;&gt;@@
 Your points: @@$user.points@@</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="loaded" position="600,100" size="100,100">&lt;&lt;if def $user&gt;&gt;&lt;&lt;include UserIdentity &quot;div&quot;&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Intro" tags="" position="725,100" size="100,100">&lt;&lt;include Prologue&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Identity-Card" tags="" position="850,100" size="100,100">&lt;&lt;include IdentityCard&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Instructions" tags="" position="975,100" size="100,100">&lt;&lt;include Directions&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="scene-1-scenario" tags="" position="1100,100" size="100,100">&lt;&lt;include Scenario1&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="scene-1-choices" tags="" position="1225,100" size="100,100">&lt;&lt;include Choices-S1&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="scene-1-short-a" tags="" position="100,225" size="100,100">&lt;&lt;include Scene1-Short-A&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="scene-1-long-a" tags="" position="225,225" size="100,100">&lt;&lt;include Scene1-Long-A&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="scene-1-short-b" tags="" position="350,225" size="100,100">&lt;&lt;include Scene1-Short-B&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="scene-1-long-b" tags="" position="475,225" size="100,100">&lt;&lt;include Scene1-Long-B&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="scene-1-short-c" tags="" position="600,225" size="100,100">&lt;&lt;include Scene1-Short-C&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="scene-2-scenario" tags="" position="725,225" size="100,100">&lt;&lt;include Scenario2&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="scene-2-choices" tags="" position="850,225" size="100,100">&lt;&lt;include Choices-S2&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="scene-2-short-a" tags="" position="975,225" size="100,100">&lt;&lt;include Scene2-Short-A&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="scene-2-long-a" tags="" position="1100,225" size="100,100">&lt;&lt;include Scene2-Long-A&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="scene-2-short-b" tags="" position="1225,225" size="100,100">&lt;&lt;include Scene2-Short-B&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="scene-2-long-b" tags="" position="100,350" size="100,100">&lt;&lt;include Scene2-Long-B&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="scene-2-short-c" tags="" position="225,350" size="100,100">&lt;&lt;include Scene2-Short-C&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="scene-3-scenario" tags="" position="350,350" size="100,100">&lt;&lt;include Scenario3&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="scene-3-choices" tags="" position="475,350" size="100,100">&lt;&lt;include Choices-S3&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="scene-3-short-a" tags="" position="600,350" size="100,100">&lt;&lt;include Scene3-Short-A&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="scene-3-long-a" tags="" position="725,350" size="100,100">&lt;&lt;include Scene3-Long-A&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="scene-3-short-b" tags="" position="850,350" size="100,100">&lt;&lt;include Scene3-Short-B&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="scene-3-long-b" tags="" position="975,350" size="100,100">&lt;&lt;include Scene3-Long-B&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="scene-3-short-c" tags="" position="1100,350" size="100,100">&lt;&lt;include Scene3-Short-C&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="Directions" tags="" position="1225,350" size="100,100">Each scenario presents a situation, commonly faced by youth, that involves social media, surveillance, and related policies. 
@@ -611,11 +638,11 @@ The problem is far worse, and way closer to home, than the news lets on.
 
 The stories presented here will help you understand what&#39;s at risk.
 
+To continue [[Draw an Identity Card.|Identity-Card]]</tw-passagedata><tw-passagedata pid="46" name="Choices-S1" tags="" position="725,600" size="100,100">&lt;&lt;silently&gt;&gt;&lt;&lt;set $scenarioName to setup.getScenarioName(1, &quot;choice&quot;, 1)&gt;&gt;&lt;&lt;run setup.updateDatabase($scenarioName, $identityId)&gt;&gt;&lt;&lt;run setup.getFinalStats($scenarioName, $identityId)&gt;&gt;&lt;&lt;/silently&gt;&gt;
+&lt;&lt;repeat 1s&gt;&gt;&lt;&lt;if $hello != undefined&gt;&gt;Count: &lt;&lt;print $hello&gt;&gt;
+Identity: &lt;&lt;print $entireIdentity&gt;&gt;&lt;&lt;stop&gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/repeat&gt;&gt;
 
-To continue [[Draw an Identity Card.|Identity-Card]]</tw-passagedata><tw-passagedata pid="46" name="Choices-S1" tags="" position="725,600" size="100,100">&lt;&lt;silently&gt;&gt;
-&lt;&lt;set $scenarioName to setup.getScenarioName(1, &quot;choice&quot;, 1)&gt;&gt;
-&lt;&lt;run setup.updateDatabase($scenarioName, $identityId)&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
 You choose to grieve by joining the discussions online. 
 You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren&#39;t sure what&#39;s too extra to post, since [[you don&#39;t use social media often.|scene-1-short-c]]</tw-passagedata><tw-passagedata pid="47" name="Scene1-Long-A" tags="" position="850,600" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;set $scenarioName to setup.getScenarioName(1, &quot;long&quot;, 1)&gt;&gt;
