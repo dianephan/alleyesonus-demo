@@ -22,6 +22,12 @@ body {
     margin: 0;
 }
 
+.passage ul {
+    margin-left: 0;
+    white-space: none;
+    text-align: none;
+}
+
 #ui-dialog-body {
     background-color: var(--highlight-color);
     border: none;
@@ -36,9 +42,46 @@ body {
     padding: .5rem;
 }
 
+#ui-bar-history {
+    display: none;
+}
+
 #restart-ok,
 #restart-cancel {
     background-color: var(--bg-color);
+}
+
+
+.load.ui-close {
+    background-color: var(--secondary-color);
+    border: var(--secondary-color)
+}
+
+.delete:hover {
+    background-color: var(--primary-color);
+}
+
+.delete,
+.save.ui-close {
+    background-color: var(--bg-color);
+}
+
+.buttons button {
+    background-color: var(--primary-color);
+    border: var(--primary-color)
+}
+
+.passage-useridentity {
+    background-color: var(--bg-color);
+    border: 1px solid grey;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.passage-userwarning {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 #ui-dialog-titlebar {
@@ -63,14 +106,8 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage-userstats {
-    text-align: left;
-    padding: .6rem;
-}
-
 .passage>.passage-userstats {
     background-color: var(--secondary-color);
-    padding: 0 5rem;
 }
 
 .passage a {
@@ -88,13 +125,6 @@ body {
     box-shadow: 2px 4px 2px black;
 }
 
-#ui-bar {
-    background-color: transparent;
-    border: none;
-    padding: 2rem;
-    width: 21rem;
-}
-
 #ui-bar-body {
     background-color: var(--highlight-color);
     border: 2px solid white;
@@ -102,7 +132,7 @@ body {
     padding: 4rem 1rem;
     height: 370px;
     overflow-y: hidden;
-    margin: 3rem 0;
+    margin: 3rem 0 3rem 1rem;
 }
 
 .marked {
@@ -116,8 +146,48 @@ body {
     border: 1px solid var(--font-color);
 }
 
+
+#ui-bar {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 95%;
+}
+
+#ui-bar.stowed {
+    left: -87%;
+}
+
+#ui-bar-toggle {
+    right: 2%;
+    margin: 0.4rem 0 0 1rem;
+}
+
+#ui-bar.stowed~#story {
+    margin-left: 0;
+}
+
+#story {
+    margin: 0;
+}
+
 #ui-bar-body>a {
     margin: 1rem;
+}
+
+#passages {
+    padding: 2rem 1.4rem;
+    max-width: none;
+    margin: 0 auto;
+}
+
+
+.passage {
+    font-size: 13px;
+    width: auto;
+    padding: 1rem;
+    white-space: pre-wrap;
+    text-align: justify;
 }
 
 #menu ul {
@@ -138,6 +208,26 @@ body {
     border: none;
 }
 
+#ui-bar-tray button,
+#ui-bar-history [id|=history] {
+    background-color: var(--primary-color);
+    border: 2px solid #ffffff;
+}
+
+#ui-bar-toggle {
+    border-radius: 20px;
+}
+
+.passage>.passage-userstats {
+    padding: 1rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 630px) {
+    #ui-bar.stowed {
+        left: -89%;
+    }
+}
 
 /* Large screen breakpoint */
 @media screen and (min-width: 800px) {
@@ -147,15 +237,19 @@ body {
 
     #passages {
         padding: 4rem 1.4rem;
+        max-width: 54em;
+        margin: 0 auto;
     }
 
     .passage {
+        font-size: 16px;
         width: 800px;
         min-height: 300px;
         margin: auto;
         padding: 3rem;
         line-height: 3;
         border: 10px double var(--font-color);
+        white-space: break-spaces;
     }
 
     .passage a {
@@ -168,25 +262,62 @@ body {
         color: var(--font-color);
     }
 
-    #ui-bar-tray button,
-    #ui-bar-history [id|=history] {
+    #ui-bar {
+        background-color: transparent;
+        border: none;
+        padding: 2rem;
+        width: 21rem;
+    }
 
-        border: 2px solid #ffffff;
+    #ui-bar.stowed {
+        left: -18rem;
     }
 
     #ui-bar-toggle {
-        border-radius: 20px;
         right: 0;
         left: 75%;
         padding: .3em .5em .2em;
+        background-color: transparent;
+    }
+
+    #ui-bar-tray {
+        margin-top: 2rem;
+        position: absolute;
+        top: .2em;
+        left: 0;
+        right: 0;
+    }
+
+    #ui-bar-body {
+        background-color: var(--highlight-color);
+        border: 2px solid white;
+        box-shadow: 2px 4px 5px black;
+        padding: 4rem 1rem;
+        height: 370px;
+        overflow-y: hidden;
+        margin: 3rem 0;
+    }
+
+    #story {
+        z-index: 10;
+        margin: 2.5em;
+        margin-left: 20em;
+    }
+
+    #ui-bar-tray button,
+    #ui-bar-history [id|=history] {
+        border: 2px solid #ffffff;
+        background-color: transparent;
     }
 
     #ui-bar-tray button:hover,
     #ui-bar-history [id|=history]:hover {
         background-color: var(--primary-color);
     }
+}
 
-    #ui-bar-tray {
-        margin-top: 2rem;
+@media screen and (min-width: 1600px) {
+    #ui-bar {
+        left: 10%;
     }
 }

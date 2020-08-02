@@ -1,0 +1,74 @@
+::Firebase[script]
+
+const favico = document.createElement("link");
+favico.rel = "icon";
+favico.type = "image/png";
+favico.href = "images/favicon.png";
+document.head.appendChild(favico);
+
+setup.getIdentityId = function (race, neighborhood, school, housing) {
+  if (race === "Black") {
+    if (neighborhood === "Brownsville") return 1;
+    return 2;
+  } else if (race === "Brown") {
+    if (housing === "NYCHA Housing") return 3;
+    return 4;
+  } else {
+    if (school === "Specialized") return 5;
+    return 6;
+  }
+};
+
+setup.getScenarioName = function (scenarioNum, type, num) {
+  let scenarioName = "Scenario_" + scenarioNum + "_";
+  if (type === "choice") {
+    scenarioName += "choice_" + num;
+  } else if (type === "short") {
+    scenarioName += "short_term_" + num;
+  } else {
+    scenarioName += "long_term_" + num;
+  }
+  return scenarioName;
+};
+
+// import firebase + our secret key info from the root of the project
+setup.firebaseApp = importScripts([
+  "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js",
+  "https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js",
+  "firebase.js",
+]);
+
+setup.firebaseApp
+  .then(function () {
+    firebase.initializeApp(firebaseConfig);
+
+    const database = firebase.database();
+
+    setup.updateDatabase = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .set(firebase.database.ServerValue.increment(1));
+    };
+
+    setup.getFinalStats = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .on("value", function (result) {
+          getStats(scenarioName, identityId, result);
+        });
+    };
+
+    function getStats(scenarioName, identityId, result) {
+      State.variables.entireIdentity = scenarioName + " - " + identityId;
+      State.variables.hello = result.val();
+    }
+  })
+  .catch((e) => {
+    console.log(e);
+  });

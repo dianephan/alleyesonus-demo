@@ -3,6 +3,7 @@
     <<include Set-Identity>>
     <<set $user = {
         identity:  $identity,
+        identityId: $identityId,
         points: $identityValue,
         race:  $raceIdentity,
         housing: $housingIdentity,
