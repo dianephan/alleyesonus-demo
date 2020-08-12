@@ -3,14 +3,15 @@
 <<set $scenarioName to setup.getScenarioName(2, "choice", 1)>>
 <<run setup.updateDatabase($scenarioName, $identityId)>>
 <</silently>>
-The drama is juicy and the fight is wild - loads of people have crowded in behind you just to get a look. 
+You look around the crowd for your friends, but you can’t see them; everybody behind you has their hands up to record the fight.
 
-"A video of [[this would get tons of attention online.|scene-2-short-a][$user.points = $user.points - 0]]" you think to yourself as you reach for your phone. You look around the crowd for your friends, but you can't find them. 
+You were so caught up in catching the action that you didn’t notice the fight end. The crowd rushes past you towards the fighters in the middle, so you back out and leave the area before any faculty show up.  
+
+You sit on a bench across campus and look at the video. The footage is really crisp. You might just have the best angle of the fight in school! While you still have a Wi-Fi connection, do you want to upload the video and send the link to your friends?
+
+[[Absolutely - this is about to go viral!|scene-2-short-a][$user.points = $user.points - 0]]
 <<if $user.points >= 200>>
-"[[I'll just catch a video for my friends|scene-2-short-b][$user.points = $user.points - 200]]; they'd love to have this view." 
-<</if>>
-
-<<if $user.points >= 370>> 
-On second thought, you consider backing out of the crowd and finding your friends instead. 
-Everyone has their phones out anyways, [[what good will one more video do?|scene-2-short-c][$user.points = $user.points - 370]]
+[[No, I’ll just show them in person later.|scene-2-short-b][$user.points = $user.points - 200]]
+<</if>><<if $user.points >= 370>> 
+[[What good are all of these videos? I’m going to delete it.|scene-2-short-c][$user.points = $user.points - 370]]
 <</if>>

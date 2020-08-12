@@ -1,5 +1,5 @@
 :: Scenario1
 Anthony, a family friend, has died. He was affiliated with a gang. People in your community are mourning Anthony's death by posting photos of him online with the tag #E4A ("Everything for Anthony").
 
-In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them? 
-[[Yes|scene-1-choices][$user.points = $user.points - 0]] | [[No|Scene1-Short-C][$user.points = $user.points - 300 ]]
+In the days after his death, your feed is dotted with #E4A posts from your family, friends, and neighbors. Do you join them?
+[[Yes, I want to make my loss known.|scene-1-choices][$user.points = $user.points - 0]] | [[No, I don’t use social media much anyways.|Scene1-Short-C][$user.points = $user.points - 300 ]]

@@ -3,8 +3,9 @@
 <<repeat 1s>><<if $hello != undefined>>Count: <<print $hello>>
 Identity: <<print $entireIdentity>><<stop>><</if>>
 <</repeat>>
+You choose to grieve by joining the discussion online. Scrolling through your pics, you find a happy-looking portrait of you and Anthony in the park; his arm is around your shoulders and he’s flashing that soft smile of his. Reflecting on your memories of Anthony has helped put your thoughts together. 
 
-You choose to grieve by joining the discussions online. 
+The message pours out from your fingers and onto the screen. You sign it #E4A and move to post it when you notice that the picture isn’t attached. It’s such a sweet memory of him, but you don’t want to come off as extra. Should you include the picture in your post?
 
-You decide to [[post a picture|scene-1-short-a]] you took of your friend and write a message in memory of Anthony punctuated with #E4A. Or maybe you should remove the picture and [[only post the message?|scene-1-short-b]] You aren't sure what's too extra to post, since [[you don't use social media often.|scene-1-short-c]]
-
+[[Yes, share it to keep his memory alive.|scene-1-short-a]]
+[[No. Words feel like enough.|scene-1-short-b]]

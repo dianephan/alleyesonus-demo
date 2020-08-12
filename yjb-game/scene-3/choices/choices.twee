@@ -3,14 +3,11 @@
 <<set $scenarioName to setup.getScenarioName(3, "choice", 1)>>
 <<run setup.updateDatabase($scenarioName, $identityId)>>
 <</silently>>
-With each passing day, the rumors about your sister spread further. 
-
-You know the names of the people flaming your sister now; you could probably shut them up if you [[bring some friends to help.|scene-3-short-a][$user.points = $user.points - 0]] 
-
+With each passing day, the rumors about your sister spread further. You know the names of the people flaming your sister now and can probably use that to your advantage. You have the ability to shut them up if you bring some friends to help, but that’s a lot of effort. You realize that you can solve the problem online by digging up some dirt on the trolls and exposing them. 
+What will you do? 
+[[Call your friends to back you up.|scene-3-short-a][$user.points = $user.points - 0]] 
 <<if $user.points >= 200>>
-That's a lot of effort though. You could probably [[solve the problem online|scene-3-short-b][$user.points = $user.points - 200]] by digging up some dirt on the trolls and posting that. 
-<</if>>
-
-<<if $user.points >= 370>> 
-Or maybe you don't even need to do that. You could [[try reporting them for harrasment.|scene-3-short-c][$user.points = $user.points - 370]] 
+[[Humiliate the bullies online.|scene-3-short-b][$user.points = $user.points - 200]] 
+<</if>><<if $user.points >= 370>> 
+[[Report them to the school administration for harassment.|scene-3-short-c][$user.points = $user.points - 370]] 
 <</if>>
