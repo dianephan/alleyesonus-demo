@@ -11,3 +11,7 @@ What will you do?
 <</if>><<if $user.points >= 370>> 
 [[Report them to the school administration for harassment.|scene-3-short-c][$user.points = $user.points - 370]] 
 <</if>>
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@

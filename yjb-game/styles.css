@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-color);
     /* background-image: linear-gradient(var(--bg-color), var(--secondary-color)); */
     margin: 0;
+    color: var(--font-color);
 }
 
 .passage ul {
@@ -106,8 +107,18 @@ body {
     box-shadow: 2px 4px 5px black;
 }
 
-.passage>.passage-userstats {
+.passage>.passage-userstats,
+#other-users {
     background-color: var(--secondary-color);
+}
+
+#other-users {
+    margin-top: 1rem;
+}
+
+#other-identities {
+    background-color: var(--bg-color);
+    margin: .3rem;
 }
 
 .passage a {
@@ -218,10 +229,14 @@ body {
     border-radius: 20px;
 }
 
-.passage>.passage-userstats {
+.passage>.passage-userstats,
+#other-users,
+#other-identities {
     padding: 1rem;
     text-align: center;
 }
+
+
 
 @media screen and (min-width: 630px) {
     #ui-bar.stowed {

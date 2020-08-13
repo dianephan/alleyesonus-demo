@@ -33,42 +33,67 @@ setup.getScenarioName = function (scenarioNum, type, num) {
 
 // import firebase + our secret key info from the root of the project
 setup.firebaseApp = importScripts([
-  "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js",
-  "https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js",
-  "firebase.js",
+  "/__/firebase/7.17.2/firebase-app.js",
+  "/__/firebase/7.17.1/firebase-auth.js",
+  "/__/firebase/7.17.1/firebase-database.js",
+  "/__/firebase/init.js"
 ]);
 
 setup.firebaseApp
   .then(function () {
-    firebase.initializeApp(firebaseConfig);
 
-    const database = firebase.database();
+      const database = firebase.database();
+      anonSignIn();
 
-    setup.updateDatabase = function (scenarioName, identityId) {
-      database
-        .ref("identities")
-        .child(identityId)
-        .child(scenarioName)
-        .child("count")
-        .set(firebase.database.ServerValue.increment(1));
-    };
+      setup.getFinalStats = function (scenarioName, identityId) {
+        database
+          .ref("identities")
+          .child(identityId)
+          .child(scenarioName)
+          .child("count")
+          .on("value", function (result) {
+        
+            getStats(scenarioName, identityId, result);
+          });
+      };
 
-    setup.getFinalStats = function (scenarioName, identityId) {
-      database
-        .ref("identities")
-        .child(identityId)
-        .child(scenarioName)
-        .child("count")
-        .on("value", function (result) {
-          getStats(scenarioName, identityId, result);
+      setup.updateDatabase = function (scenarioName, identityId) {
+        database
+          .ref("identities")
+          .child(identityId)
+          .child(scenarioName)
+          .child("count")
+           .set(firebase.database.ServerValue.increment(1))
+        .then(() => {
+          setup.getFinalStats(scenarioName, identityId)
         });
-    };
+      };
 
-    function getStats(scenarioName, identityId, result) {
-      State.variables.entireIdentity = scenarioName + " - " + identityId;
-      State.variables.hello = result.val();
-    }
+      function getStats(scenarioName, identityId, result) {
+        State.variables.entireIdentity = scenarioName + " - id: " + identityId;
+        State.variables.count = result.val();
+      }
   })
   .catch((e) => {
     console.log(e);
   });
+
+function anonSignIn() {
+  firebase
+    .auth()
+    .signInAnonymously()
+    .then(() => {
+      // firebase.auth().onAuthStateChanged(function (user) {
+      //   return user;
+      // });
+       return true;
+    })
+    .catch(function (error) {
+      if (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(error);
+        return false;
+      }
+    });
+}

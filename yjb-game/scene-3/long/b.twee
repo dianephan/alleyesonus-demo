@@ -19,3 +19,7 @@ The harrasment your sister was facing online only gets worse.
 <</silently>>
 
 [[Finale|finale]]
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@

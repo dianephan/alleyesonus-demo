@@ -6,3 +6,7 @@
 Your video blows up! You aren't sure if you caught the best angle of the action or if you were just lucky enough to be the first post people found online, but your video has thousands of views by dinner.
 
 Some of those views came from your school administrators, who are now convinced that [[you were involved in the fight breaking out.|scene-2-long-a]]
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@
