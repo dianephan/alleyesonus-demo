@@ -8,10 +8,10 @@
 *:before,
 *:after {
     box-sizing: inherit;
-    --bg-color: #1d1f15;
-    --primary-color: #A76833;
-    --secondary-color: #8BA285;
-    --highlight-color: #747043;
+    --bg-color: #1D1F28;
+    --primary-color: #898B8E;
+    --secondary-color: #080c10;
+    --highlight-color: #004C97;
     --font-color: #eee;
 }
 
