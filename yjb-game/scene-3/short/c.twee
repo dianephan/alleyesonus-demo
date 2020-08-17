@@ -7,7 +7,7 @@ The NYPD have a cyberbullying hotline. You submit an anonymous report implicatin
 
 But nothing happens. The NYPD doesn't do anything because a physical altercation has not occurred. 
 
-[[Finale|finale]]
+<<button [[Finale|finale]]>>...<</button>>
 @@#other-users;
 <<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
 <</repeat>>

@@ -11,6 +11,7 @@ All Eyes On Us
 }
 
 :: UserIdentity
+Your Identity Card
 Race: @@<<= $user.race>>@@
 Housing: @@<<= $user.housing>>@@
 Neighborhood: @@<<= $user.neighborhood>>@@
@@ -22,7 +23,7 @@ Points: @@$user.points@@
 <<if $user.status is not ''>>Warning: <</if>>@@<<= $user.status>>@@
 
 :: UserStats
-Your identity: @@<<= $user.identity>>@@
+Your identity: @@<<= $user.identity>>@@ 
 Your points: @@$user.points@@
 
 :: StoryCaption[loaded]

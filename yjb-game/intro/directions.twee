@@ -3,4 +3,4 @@ Each scenario presents a situation, commonly faced by youth, that involves socia
 
 Use your points to buy a response to the scenario. Your options might be limited by how many points you have.
 
-[[Begin scenario 1.|scene-1-scenario]]
+<<button [[Begin scenario 1.|scene-1-scenario]]>>...<</button>>

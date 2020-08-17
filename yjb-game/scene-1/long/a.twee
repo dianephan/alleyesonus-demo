@@ -11,7 +11,7 @@ This means that if you get involved with the NYPD again, you will receive added 
 <<include Set-Status>>
 <<set $user.status to $status>>
 <</silently>>
-[[Continue|scene-2-scenario]]
+<<button [[Continue|scene-2-scenario]]>>...<</button>>
 @@#other-users;
 <<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
 <</repeat>>

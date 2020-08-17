@@ -12,7 +12,7 @@ During your suspension, you are sent to court and receive added charges because 
 <<include Set-Status>>
 <<set $user.status to $status>>
 <</silently>>
-[[Continue|scene-3-scenario]]
+<<button [[Continue|scene-3-scenario]]>>...<</button>>
 @@#other-users;
 <<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
 <</repeat>>
