@@ -473,70 +473,45 @@ setup.getScenarioName = function (scenarioNum, type, num) {
 
 // import firebase + our secret key info from the root of the project
 setup.firebaseApp = importScripts([
-  "/__/firebase/7.17.2/firebase-app.js",
-  "/__/firebase/7.17.1/firebase-auth.js",
-  "/__/firebase/7.17.1/firebase-database.js",
-  "/__/firebase/init.js"
+  "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js",
+  "https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js",
+  "firebase.js",
 ]);
 
 setup.firebaseApp
   .then(function () {
+    firebase.initializeApp(firebaseConfig);
 
-      const database = firebase.database();
-      anonSignIn();
+    const database = firebase.database();
 
-      setup.getFinalStats = function (scenarioName, identityId) {
-        database
-          .ref("identities")
-          .child(identityId)
-          .child(scenarioName)
-          .child("count")
-          .on("value", function (result) {
-        
-            getStats(scenarioName, identityId, result);
-          });
-      };
+    setup.updateDatabase = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .set(firebase.database.ServerValue.increment(1));
+    };
 
-      setup.updateDatabase = function (scenarioName, identityId) {
-        database
-          .ref("identities")
-          .child(identityId)
-          .child(scenarioName)
-          .child("count")
-           .set(firebase.database.ServerValue.increment(1))
-        .then(() => {
-          setup.getFinalStats(scenarioName, identityId)
+    setup.getFinalStats = function (scenarioName, identityId) {
+      database
+        .ref("identities")
+        .child(identityId)
+        .child(scenarioName)
+        .child("count")
+        .on("value", function (result) {
+          getStats(scenarioName, identityId, result);
         });
-      };
+    };
 
-      function getStats(scenarioName, identityId, result) {
-        State.variables.entireIdentity = scenarioName + " - id: " + identityId;
-        State.variables.count = result.val();
-      }
+    function getStats(scenarioName, identityId, result) {
+      State.variables.entireIdentity = scenarioName + " - " + identityId;
+      State.variables.hello = result.val();
+    }
   })
   .catch((e) => {
     console.log(e);
-  });
-
-function anonSignIn() {
-  firebase
-    .auth()
-    .signInAnonymously()
-    .then(() => {
-      // firebase.auth().onAuthStateChanged(function (user) {
-      //   return user;
-      // });
-       return true;
-    })
-    .catch(function (error) {
-      if (error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(error);
-        return false;
-      }
-    });
-}</script><tw-passagedata pid="1" name="finale" tags="" position="100,100" size="100,100">Thank you for playing our game. If you are interested in learning more about how you can get involved with protecting our youth, you can explore these references:
+  });</script><tw-passagedata pid="1" name="finale" tags="" position="100,100" size="100,100">Thank you for playing our game. If you are interested in learning more about how you can get involved with protecting our youth, you can explore these references:
 
 &lt;ul&gt;
     &lt;li&gt; Learn more about the &lt;a href=&quot;https://www.courtinnovation.org/about/announcements/social-media-surveillance&quot;&gt;All Eyes on Us project.&lt;/a&gt; &lt;/li&gt;
