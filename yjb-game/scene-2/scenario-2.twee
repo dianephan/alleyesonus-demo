@@ -1,2 +1,3 @@
 :: Scenario2
-Before 2nd period, you hear there will be a fight on campus after school. After your last class, you head outside and see a group of people gathering. You're early enough to get an unobstructed view of the fight. [[You pull out your phone.|scene-2-choices]]
+Before 2nd period, you hear there will be a fight on campus after school. After your last class, you head outside and see a group of people gathering. You're early enough to get an unobstructed view of the fight. You pull out your phone.
+<<button [[Continue|scene-2-choices]]>><</button>>

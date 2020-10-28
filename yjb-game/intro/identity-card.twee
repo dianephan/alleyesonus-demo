@@ -5,6 +5,6 @@ Your Identity Card is your character for the game, and gives you four pieces of 
 <<include Set-User>>
 <</silently>>
 <<include UserStats "div">>
-[[Read over the instructions|Instructions]] or [[Begin scenario 1.|scene-1-scenario]]
-
+As you continue the game, check the toggle button (on the upper left corner of the page) for more info and updates on your identity and points. To continue, either Read over the instructions or Begin scenario 1 below.
+<<button [[Read over the instructions|Instructions]]>>...<</button>> or <<button [[Begin scenario 1.|scene-1-scenario]]>>...<</button>>
 

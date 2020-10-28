@@ -4,8 +4,7 @@ You choose to grieve by joining the discussion online. Scrolling through your pi
 
 The message pours out from your fingers and onto the screen. You sign it #E4A and move to post it when you notice that the picture isn’t attached. It’s such a sweet memory of him, but you don’t want to come off as extra. Should you include the picture in your post?
 
-[[Yes, share it to keep his memory alive.|scene-1-short-a]]
-[[No. Words feel like enough.|scene-1-short-b]]
+<<button [[Yes, share it to keep his memory alive.|scene-1-short-a]]>>...<</button>> or <<button [[No. Words feel like enough.|scene-1-short-b]]>>...<</button>>
 
 @@#other-users;
 <<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>

@@ -9,11 +9,11 @@ You were so caught up in catching the action that you didn’t notice the fight 
 
 You sit on a bench across campus and look at the video. The footage is really crisp. You might just have the best angle of the fight in school! While you still have a Wi-Fi connection, do you want to upload the video and send the link to your friends?
 
-[[Absolutely - this is about to go viral!|scene-2-short-a][$user.points = $user.points - 0]]
+<<button [[Absolutely - this is about to go viral!|scene-2-short-a]]>> <<set $user.points to $user.points - 0>> <</button>>
 <<if $user.points >= 200>>
-[[No, I’ll just show them in person later.|scene-2-short-b][$user.points = $user.points - 200]]
+<<button [[No, I’ll just show them in person later.|scene-2-short-b]]>> <<set $user.points to $user.points - 200>> <</button>>
 <</if>><<if $user.points >= 370>> 
-[[What good are all of these videos? I’m going to delete it.|scene-2-short-c][$user.points = $user.points - 370]]
+<<button [[What good are all of these videos? I’m going to delete it.|scene-2-short-c]]>> <<set $user.points to $user.points - 370>> <</button>>
 <</if>>
 @@#other-users;
 <<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
