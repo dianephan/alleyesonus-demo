@@ -10,5 +10,8 @@ The NYPD has flagged you as at-risk of being gang affiliated. They're watching a
 <<set $user.status to $status>>
 <</silently>>
 [[Continue|scene-2-scenario]]
-
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@
 

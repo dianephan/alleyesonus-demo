@@ -12,3 +12,7 @@ Meanwhile, at the precinct you find that your charges have been raised because y
 The harrasment your sister was facing online only gets worse.
 
 [[Finale|finale]]
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@

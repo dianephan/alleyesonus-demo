@@ -1,11 +1,13 @@
 :: Choices-S1
-<<silently>><<set $scenarioName to setup.getScenarioName(1, "choice", 1)>><<run setup.updateDatabase($scenarioName, $identityId)>><<run setup.getFinalStats($scenarioName, $identityId)>><</silently>>
-<<repeat 1s>><<if $hello != undefined>>Count: <<print $hello>>
-Identity: <<print $entireIdentity>><<stop>><</if>>
-<</repeat>>
+<<silently>><<set $scenarioName to setup.getScenarioName(1, "choice", 1)>><<run setup.updateDatabase($scenarioName, $identityId)>><</silently>>
 You choose to grieve by joining the discussion online. Scrolling through your pics, you find a happy-looking portrait of you and Anthony in the park; his arm is around your shoulders and he’s flashing that soft smile of his. Reflecting on your memories of Anthony has helped put your thoughts together. 
 
 The message pours out from your fingers and onto the screen. You sign it #E4A and move to post it when you notice that the picture isn’t attached. It’s such a sweet memory of him, but you don’t want to come off as extra. Should you include the picture in your post?
 
 [[Yes, share it to keep his memory alive.|scene-1-short-a]]
 [[No. Words feel like enough.|scene-1-short-b]]
+
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@

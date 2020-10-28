@@ -15,3 +15,7 @@ You sit on a bench across campus and look at the video. The footage is really cr
 <</if>><<if $user.points >= 370>> 
 [[What good are all of these videos? I’m going to delete it.|scene-2-short-c][$user.points = $user.points - 370]]
 <</if>>
+@@#other-users;
+<<repeat 1s>><<if $count != undefined>><<print $count>> other people with your identity made this choice.<<stop>><</if>>
+<</repeat>>
+@@
